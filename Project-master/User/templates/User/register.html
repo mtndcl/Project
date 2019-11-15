@@ -1,0 +1,72 @@
+{% extends 'User/base.html' %}
+
+
+{% block content %}
+
+
+
+    <form  method="POST">
+          {% csrf_token %}
+          
+
+          <div  class="container align-self-center">
+          <div  class="row justify-content-center">
+             <div class="form-group col-5">
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="text-center">
+                  <font size="10", style='color: white'>  <label>  <b>FOCUS</b></label> </font><br>
+                  <font size="5", style='color: white'>  <label>  <b>Registration Form</b></label> </font>
+                </div>
+                <br>
+                {% if messages %}
+                  <div class="text-warning">
+                    {% for message in messages %}
+
+                      <div  class="container align-self-center">
+                        <div  class="row justify-content-center">
+                
+
+                          <label>  <b>{{ message }}</b></label>
+                          
+                        </div>
+                      </div>
+               
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                <br>
+               
+                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Username">
+                <br>
+                <input type="text" class="form-control" name="name" placeholder="First Name " >
+                <br>
+                <input type="text" class="form-control" name="surname" placeholder="Last Name" >
+                <br>
+                <input type="password" class="form-control" name="password" placeholder="Password" >
+                <br>
+                <input type="password" class="form-control" name="password2" placeholder="Password Validation" >
+                <br>
+                <input type="text" class="form-control" name="mail" placeholder="E-mail " >
+                <br>
+                <input type="text" class="form-control" name="phone_number" placeholder="Phone Number" >
+                <br>
+                <input type="text" class="form-control" name="address" placeholder="Address" >
+
+                <br>
+                 
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              </div>
+           </div>
+           
+                     
+                
+          </div>
+          
+        </form>
+
+
+{% endblock %}
